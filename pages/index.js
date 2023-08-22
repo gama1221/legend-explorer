@@ -1,51 +1,17 @@
 import { data } from "../SpeakerData";
+import Speaker from "../src/components/Speaker";
 
 const IndexPage = () => {
-
     return (
         <div className="container speakers-list">
             <div className="row">
                 {
                     data.map((speaker) => {
-                        const { id, bio, first, last, favorite, twitterHandle, company, sessions } = speaker;
                         return (
-                            <div key={id} className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
-                                <div className="card card-height p-4 mt-4">
-                                    {/* image  */}
-                                    <div className="speaker-img d-flex flex-row justify-content-center align-items-center h-300">
-                                        <img
-                                            className="contain-fit"
-                                            src={`/images/speaker-${id}.jpg`}
-                                            width="300"
-                                            alt={`${first} ${last}`}
-                                        />
-                                    </div>
-                                    {/* demographic  */}
-                                    <div className="speaker-info">
-                                        <div className="d-flex justify-content-between mb-3">
-                                            <h3 className="text-truncate w-200">
-                                                {first} {last}
-                                            </h3>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                {bio} {company} {twitterHandle} {favorite}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* sessions  */}
-                                <div className="sessionBox card h-250">
-                                    <span className="session w-100">
-                                        {sessions[0].title} <strong> Room: {sessions[0].room.name}</strong>
-                                    </span>
-                                </div>
-                            </div>
+                            <Speaker key={speaker.id} speaker={speaker} />
                         )
                     })
                 }
-
-                {/* </div> */}
             </div>
         </div>
     )
