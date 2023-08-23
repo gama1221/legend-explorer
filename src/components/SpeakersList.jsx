@@ -1,18 +1,22 @@
 import Speaker from "./Speaker";
-const SpeakersList = ({data}) => {
-    return (  
+const SpeakersList = ({ data, showSessions }) => {
+    return (
         <div className="container speakers-list">
             <div className="row">
                 {
                     data.map((speaker) => {
                         return (
-                            <Speaker key={speaker.id} speaker={speaker} />
+                            <Speaker
+                                key={speaker.id}
+                                speaker={speaker}
+                                showSessions={showSessions}
+                            />
                         )
                     })
                 }
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default SpeakersList;
