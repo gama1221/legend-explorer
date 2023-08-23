@@ -9,7 +9,7 @@ export const data = [
     twitterHandle: "arungupta",
     favorite: true,
     sessions: [
-      { 
+      {
         id: "32",
         title: "Rails powered by GlassFish",
         eventYear: "2008",
